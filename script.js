@@ -70,7 +70,7 @@ function displayScore() {
 				score ++;
 			}
 		})
-	scoreElement.textContent = `Your score is ${score} out of ${question.length}.`;
+	scoreElement.textContent = `Your score is ${score} out of ${questions.length}.`;
 	localStorage.setItem("score", score);
 } 
 submitElement.addEventListener("click", displayScore);
