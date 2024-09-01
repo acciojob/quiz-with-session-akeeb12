@@ -63,9 +63,9 @@ renderQuestions();
 function displayScore() {
 	let score = 0;
 	let i = 0;
-	questions.forEach((questions, index) =>
+	questions.forEach((question, index) =>
 		{
-			if(userAnswers[index] === question.answers)
+			if(userAnswers[index] === question.answer)
 			{
 				score ++;
 			}
