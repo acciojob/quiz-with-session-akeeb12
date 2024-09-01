@@ -28,7 +28,7 @@ const questions = [
     answer: "Ottawa",
   },
 ];
-let userAnswers = JSON.parse(session.Storage.getitem("progress")) || [];
+let userAnswers = JSON.parse(session.Storage.getItem("progress")) || [];
 // Display the quiz questions and choices
 function renderQuestions() {
   for (let i = 0; i < questions.length; i++) {
@@ -49,7 +49,7 @@ function renderQuestions() {
 			{
 				const selectedValue = event.target.value;
 				userAnswers[i] = selectedValue;
-				sessionStorage.setItime("progress", JSON.stringify(userAnswers)); 
+				sessionStorage.setItem("progress", JSON.stringify(userAnswers)); 
 			})
       const choiceText = document.createTextNode(choice);
       questionElement.appendChild(choiceElement);
