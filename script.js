@@ -28,7 +28,7 @@ const questions = [
     answer: "Ottawa",
   },
 ];
-let userAnswers = JSON.parse(session.Storage.getItem("progress")) || [];
+let userAnswers = JSON.parse(sessionStorage.getItem("progress")) || [];
 // Display the quiz questions and choices
 function renderQuestions() {
   for (let i = 0; i < questions.length; i++) {
@@ -59,3 +59,19 @@ function renderQuestions() {
   }
 }
 renderQuestions();
+
+function displayScore() {
+	let score = 0;
+	let i = 0;
+	questions.forEach((questions, index) =>
+		{
+			if(userAnswers[index] === question.answers)
+			{
+				score ++;
+			}
+		})
+	scoreElement.textContent = `Your score is ${score} out of ${question.length}.`;
+	localStorage.setItem("score", score);
+} 
+submitElement.addEventListener("click", displayScore);
+
